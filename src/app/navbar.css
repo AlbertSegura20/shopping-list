@@ -1,0 +1,26 @@
+.navbar-toggler{
+  border: none !important;
+}
+
+.navbar-toggler:hover {
+    /*background-color: black !important;*/
+}
+
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .userContainer{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .userContainerCollapse{
+        display: none;
+    }
+
+}
