@@ -3,7 +3,11 @@ import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
 import  "../app/navbar.css";
+import {CustomContext} from "@/Context/Context";
 const Navbar = () => {
+
+    const {getUserName} = CustomContext();
+
 
     return (
 
@@ -42,7 +46,7 @@ const Navbar = () => {
                   </div>
 
                   <div className={"userContainer"}>
-                      <p className={"text-white my-auto"}>User:</p>
+                      <p className={"text-white my-auto"}>User: {getUserName}</p>
                   </div>
               </div>
           </nav>

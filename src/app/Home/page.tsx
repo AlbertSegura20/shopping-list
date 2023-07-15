@@ -4,6 +4,8 @@ import {useState} from "react";
 import "../cards.css";
 import plusImage from "../../../plus.png";
 import Image from "next/image";
+import {CustomContext} from "@/Context/Context";
+
 
 
 const Home = () => {
@@ -30,7 +32,7 @@ const Home = () => {
                     <div className={"cards-container container-sm d-flex flex-wrap justify-content-center align-items-center"}>
 
                         {text.map((items:any, index:number) => (
-                            <div className={"rounded ms-4 mt-4 shadow-lg mb-2 bg-transparent zoom "} style={ {width:"240px", height:"200px", boxSizing:"border-box"}} key={index}>
+                            <div className={"rounded ms-4 mt-4 shadow-lg mb-4 bg-transparent zoom "} style={ {width:"240px", height:"200px", boxSizing:"border-box"}} key={index}>
 
                                 <div className="card">
                                     <div className="card-header">
