@@ -1,17 +1,36 @@
 'use client'
 import Navbar from "@/components/Navbar";
-import {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../cards.css";
 import plusImage from "../../../plus.png";
 import Image from "next/image";
 import {CustomContext} from "@/Context/Context";
+import Modal from "@/components/Modal";
+import CardModal from "@/components/Modal";
+import {useRouter} from "next/navigation";
 
 
 
 const Home = () => {
 
-
     const [text] = useState<string|any>([{text:"sadjdasjsdajjs"}, {text:"sadjdasjsdajjs"}, {text:"sadjdasjsdajjs"}  ,{text:"sadjdasjsdajjs"}, {text:"sadjdasjsdajjs"}])
+
+    const [visible, setVisible] = React.useState(false);
+    const Router = useRouter();
+    const handler = () => setVisible(true);
+    const userName = String(sessionStorage.getItem('userName')).replace(/['"]+/g, '');
+
+    useEffect(() => {
+        if(userName){
+            Router.push("/");
+        }
+    })
+
+    const closeHandler = () => {
+        setVisible(false);
+        // console.log("closed");
+    };
+
 
     return (
         <main className={"main"}>
@@ -24,6 +43,7 @@ const Home = () => {
                     width={64}
                     height={64}
                     alt="Plus"
+                    onClick={handler}
                 />
             </div>
 
@@ -51,6 +71,7 @@ const Home = () => {
                         ))}
                     </div>
                 </section>
+            <CardModal visible={visible} closeHandler={closeHandler} />
 
         </main>
     )

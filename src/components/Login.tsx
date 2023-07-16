@@ -2,6 +2,7 @@
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
 import {CustomContext} from "@/Context/Context";
+import {json} from "stream/consumers";
 
 
 const Login = () => {
@@ -9,7 +10,7 @@ const Login = () => {
     const Router = useRouter();
     const [token, setToken] = useState<any>();
     const [session, setSession] = useState<any>();
-    const [userName, setUserName] = useState<string>();
+    const [userName, setUserName] = useState<string|any>();
     const [password, setPassword] = useState<string>();
     const [status, setStatus] = useState<number>();
     const {getUser} = CustomContext();
@@ -84,7 +85,7 @@ const Login = () => {
         }).then(response => response);
 
         if(result.status===200){
-            getUser(userName);
+            sessionStorage.setItem('userName', userName);
             Router.push("/Home");
         }else{
             console.error("Invalid credentials");

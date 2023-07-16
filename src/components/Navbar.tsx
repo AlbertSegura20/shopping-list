@@ -7,6 +7,7 @@ import {CustomContext} from "@/Context/Context";
 const Navbar = () => {
 
     const {getUserName} = CustomContext();
+    const userName = String(sessionStorage.getItem('userName')).replace(/['"]+/g, '');
 
 
     return (
@@ -46,7 +47,7 @@ const Navbar = () => {
                   </div>
 
                   <div className={"userContainer"}>
-                      <p className={"text-white my-auto"}>User: {getUserName}</p>
+                      <p className={"text-white my-auto"}>User: {userName} </p>
                   </div>
               </div>
           </nav>

@@ -17,10 +17,15 @@ export const MyContext = ({children}) => {
     const [getUserName, setGetUserName] = useState();
 
     const getUser = (user) => {
+        // let name = sessionStorage.getItem('userName').replace(/['"]+/g, '');
         setGetUserName(user);
+        //
+        // console.log(getUserName);
+        // setGetUserName();
+
 
     }
-    
+
     return (
         <Context.Provider value={{getUser, getUserName}}>
             {children}
