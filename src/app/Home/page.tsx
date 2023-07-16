@@ -20,11 +20,11 @@ const Home = () => {
     const handler = () => setVisible(true);
     const userName = String(sessionStorage.getItem('userName')).replace(/['"]+/g, '');
 
-    useEffect(() => {
-        if(userName){
-            Router.push("/");
-        }
-    })
+    // useEffect(() => {
+    //     if(userName){
+    //         Router.push("/");
+    //     }
+    // })
 
     const closeHandler = () => {
         setVisible(false);
