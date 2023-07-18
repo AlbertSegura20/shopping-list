@@ -33,8 +33,8 @@ const Login = () => {
     async function getToken(){
         const credentials = "userapp:12345";
         const credentialsBase64 = btoa(credentials);
-        // const securityUrl = "http://www.code2ever.com:8080/api/auth/csrf";
-        const securityUrl = "http://localhost:8080/api/auth/csrf";
+        const securityUrl = "http://www.code2ever.com:8080/api/auth/csrf";
+        // const securityUrl = "http://localhost:8080/api/auth/csrf";
         const response = await fetch(securityUrl, {
             method: 'GET', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
@@ -65,8 +65,8 @@ const Login = () => {
         const credentialsBase64 = btoa(credentials);
 
         const user = {"userName": userName, "password": password}
-        // const urlLogin = "http://www.code2ever.com:8080/api/auth/signing";
-        const urlLogin = "http://localhost:8080/api/auth/signing";
+        const urlLogin = "http://www.code2ever.com:8080/api/auth/signing";
+        // const urlLogin = "http://localhost:8080/api/auth/signing";
         let result: any;
 
         result = await fetch(urlLogin, {
