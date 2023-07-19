@@ -12,7 +12,7 @@ const Login = () => {
     const [session, setSession] = useState<any>();
     const [userName, setUserName] = useState<string|any>();
     const [password, setPassword] = useState<string>();
-    const [status, setStatus] = useState<number>();
+    const [status, setStatus] = useState<any>();
     const {getUser} = CustomContext();
 
 
@@ -54,6 +54,7 @@ const Login = () => {
             console.error("Error, logging user");
             return;
         }
+
 
         setToken(response.headers.get("X-CSRF-TOKEN"));
         setSession(response.headers.get("Session"));

@@ -2,7 +2,8 @@
 import React, {useEffect, useState} from 'react';
 import {Modal, Button, Text, Input, Row, Checkbox, Textarea} from "@nextui-org/react";
 import {it} from "node:test";
-export default function CardModal({visible, closeHandler} : {visible:any, closeHandler:any}) {
+export default function CardModal({visible, closeHandler, itemProperties, buttonName}
+                                      : {visible:any, closeHandler:any, itemProperties:any, buttonName:string}) {
 
 
     const credentialsUser = "lsegura:12345";
@@ -10,6 +11,7 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
     const [item, setItem] = useState<string>();
     const [token, setToken] = useState<any>();
     const [session, setSession] = useState<any>();
+    const [text, setText] = useState<any>([])
 
 
     // let arrayList = [];
@@ -63,6 +65,70 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
         closeHandler();
     }
 
+    async function getList() {
+
+        const result =  await fetch("http://www.code2ever.com:8080/api/list", {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'default',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": "Basic " + credentialsBase64User,
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+        }).then(response => {
+            return response.json();
+        }).then(data => data);
+
+        setText(result.data);
+
+
+    }
+
+
+
+    async function updateList() {
+        // e.preventDefault();
+
+        const itemData:any = {
+            "id": itemProperties.id,
+            "name": item
+        }
+
+        const category = {
+            "id":itemData.id,
+            "name": itemData.name,
+        }
+
+        await fetch("http://www.code2ever.com:8080/api/list", {
+            method: 'PUT',
+            mode: 'cors',
+            cache: 'default',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+                "Session": session,
+                "X-CSRF-TOKEN": token,
+                "Authorization": "Basic " + credentialsBase64User,
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(category)
+        }).then(response => console.log(response.status));
+        getList();
+    }
+
+
+    const updateButton = ():void => {
+        // e.preventDefault();
+
+        console.log(item);
+        updateList();
+        closeHandler();
+    }
+
 
 
     function changeView(idList:any) {
@@ -70,29 +136,6 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
         // localStorage.setItem('idList', listObject.id);
         // localStorage.setItem('nameList', listObject.name);
     }
-    async function deleteList(id:any) {
-
-        const data = new URLSearchParams();
-        data.append('id', id);
-
-        await fetch("http://www.code2ever.com:8080/api/list", {
-            method: 'DELETE',
-            mode: 'cors',
-            cache: 'default',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                // "Session": session,
-                // "X-CSRF-TOKEN": token,
-                "Authorization": "Basic " + credentialsBase64User,
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            body: data
-        }).then(response => console.log(response.status));
-        // getList();
-    }
-
 
     async function saveList() {
         // e.preventDefault();
@@ -125,34 +168,7 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
         // document.getElementById("listName").value = list.name;
     }
 
-    async function updateList(e:any) {
-        e.preventDefault();
 
-        // const listName = document.getElementById("listName").value;
-        // const listId = document.getElementById("idListHidden").value;
-        // document.getElementById("listName").value = "";
-        // const category = {
-        //     "id":listId,
-        //     "name": listName,
-        // }
-
-        await fetch("http://www.code2ever.com:8080/api/list", {
-            method: 'PUT',
-            mode: 'cors',
-            cache: 'default',
-            credentials: 'same-origin',
-            headers: {
-                'Content-Type': 'application/json',
-                // "Session": session,
-                // "X-CSRF-TOKEN": token,
-                "Authorization": "Basic " + credentialsBase64User,
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
-            // body: JSON.stringify(category)
-        }).then(response => console.log(response.status));
-        // getList();
-    }
 
     return (
         <div>
@@ -177,6 +193,7 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
                 <Modal.Body>
                     <Input
                         name={"item"}
+                        initialValue={itemProperties?.name}
                         clearable
                         bordered
                         fullWidth
@@ -193,9 +210,17 @@ export default function CardModal({visible, closeHandler} : {visible:any, closeH
                     <Button auto flat color="error" onPress={closeHandler}>
                         Close
                     </Button>
-                    <Button auto onPress={handleSubmit}>
-                        Save
-                    </Button>
+
+                    {buttonName === "update" ?
+
+                        <Button auto color={"secondary"} onPress={updateButton}>
+                            Edit
+                        </Button>
+                    :
+                        <Button auto onPress={handleSubmit}>
+                            Save
+                        </Button>
+                    }
                 </Modal.Footer>
             </Modal>
         </div>
