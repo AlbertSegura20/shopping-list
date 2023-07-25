@@ -8,6 +8,12 @@ import {CustomContext} from "@/Context/Context";
 import Modal from "@/components/Modal";
 import CardModal from "@/components/Modal";
 import {useRouter} from "next/navigation";
+import Aside_Menubar from "@/components/Aside_Menubar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle";
+import "../../components/Aside_Menubar.css";
+import "../../app/add-icon.css"
+import Link from "next/link";
 
 
 
@@ -137,8 +143,10 @@ const Home = () => {
 
 
     return (
-        <main className={"main"}>
+       /* <main className={"main"}>
             <Navbar/>
+
+            <Aside_Menubar/>
 
             <div className={"plusIcon"}>
                 <div className={"float"}>
@@ -165,7 +173,7 @@ const Home = () => {
                                         <h5><b className={""}>{items.name}</b></h5>
                                     </div>
                                     <div className="card-body">
-                                        {/*<p className="card-text" style={{fontFamily:"monospace"}}><b>Contain:</b> {items.name}</p>*/}
+                                        {/!*<p className="card-text" style={{fontFamily:"monospace"}}><b>Contain:</b> {items.name}</p>*!/}
                                         <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.total}</p>
                                         <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.totalItems}</p>
                                     </div>
@@ -181,7 +189,89 @@ const Home = () => {
                 </section>
             <CardModal visible={visible} closeHandler={closeHandler} itemProperties={item} buttonName={buttonName!} />
 
-        </main>
+        </main>*/
+
+
+        <>
+
+
+            <div id="left" className="left-column">
+                <div className="top-left">Shopping-List</div>
+                <div className="aside-menu-bottom">
+
+                <Aside_Menubar/>
+
+                </div>
+            </div>
+
+            <div className={"right-column"}>
+                <div className={"top-right home-column"}>
+
+                    <nav id={"navbar"} className="navbar bg-body-tertiary">
+                        <div className="container d-flex justify-content-center ">
+
+                            <form className="d-flex input-search" role="search">
+                                <input id="input" className="form-control me-2" type="search" placeholder="Search"
+                                       aria-label="Search"/>
+                                <div className={"button-search"}>
+                                    <button className="btn btn-outline-success" type="submit">Search</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </nav>
+
+
+                </div>
+                <div className={"contain-bottom"}>
+
+                    <div className={"plusIcon"}>
+                        <div className={"float"}>
+                            <Image className={"myfloat"}
+                                   id={"add"}
+                                   src={plusImage}
+                                   width={64}
+                                   height={64}
+                                   alt="Plus"
+                                // onClick={handler}
+                                   onClick={addHandler}
+                            />
+                        </div>
+                    </div>
+
+                    {/*<div className={"main"}>*/}
+
+                        <div className={"cards-container main d-flex flex-wrap justify-content-center align-items-center"}>
+
+                            {text.map((items:any, index:number) => (
+                                <div className={"rounded ms-4 mt-4 shadow-lg mb-4 bg-transparent zoom "}  key={items.id}>
+
+                                    <div className="card">
+                                        <div className="card-header">
+                                            <h5><b className={""}>{items.name}</b></h5>
+                                        </div>
+                                        <div className="card-body">
+                                            <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.total}</p>
+                                            <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.totalItems}</p>
+                                        </div>
+                                        <div className={"card-footer mt-1"}>
+                                            <button id={"update"} className={"btn btn-primary"} onClick={() => editHandler(items)}>Edit Title</button>
+                                            <button  className={"btn btn-danger ms-3"} onClick={() => deleteList(items.id)}>Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+
+                        </div>
+
+                    {/*</div>*/}
+
+                </div>
+            </div>
+            <CardModal visible={visible} closeHandler={closeHandler} itemProperties={item} buttonName={buttonName!} />
+
+
+        </>
     )
 }
 
