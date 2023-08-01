@@ -139,7 +139,6 @@ body {
 }
 
 
-
 .home-icon{
     transition: 1s;
     text-decoration: none;
@@ -173,6 +172,7 @@ body {
 #input {
     transition: 1s;
 }
+
 
 
 /*************************************************************************/
@@ -211,6 +211,7 @@ body {
     background-color: #121212;
     transition: 1s;
 }
+
 
 #button-submit-edit{
     background-color: transparent;
@@ -261,6 +262,7 @@ body {
     text-decoration: none;
     color: white;
 }
+
 
 .table-container{
     background-color: white !important;
