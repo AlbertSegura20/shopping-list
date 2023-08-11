@@ -26,7 +26,9 @@ body {
     flex-direction: column;
 }
 
-
+.form-container{
+    width: 90%;
+}
 
 .column {
     height: 100%;
@@ -405,7 +407,7 @@ body {
     .form-container{
         display: flex;
         justify-content: center;
-        width: 80%;
+        width: 90%;
     }
 
 }

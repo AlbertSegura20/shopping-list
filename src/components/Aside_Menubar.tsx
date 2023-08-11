@@ -59,7 +59,7 @@ const Aside_Menubar = () => {
                                             </div>
                                         </div></Link>
 
-                                        <Link href={"/Edit/Item/Id"} className={"edit-icon"}>
+                                        <Link href={"/Edit/Item"} className={"edit-icon"}>
                                             <div className={"mx-4 d-flex item item-icon mt-3 align-items-center"}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                      fill="currentColor"
@@ -87,6 +87,7 @@ const Aside_Menubar = () => {
                                                 <span className={"ps-1 pt-2"}>Category</span>
                                             </div>
                                         </div></Link>
+                                        
 
                                         <div className={"mx-4 d-flex trash trash-icon align-items-center mt-3"}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"

@@ -269,7 +269,7 @@ const Category = () => {
 
 
                             <div className={"form-container "}>
-                                <div className={"d-flex align-items-center justify-content-center mt-3"}>
+                                <div className={"d-flex  align-items-center justify-content-center mt-3"}>
 
                                     <form onSubmit={handleSubmit}  className={"shadow-lg rounded px-3 py-3 border form-container-edit   "} id={"formContainer"} style={{width: "400px"}}>
                                         <div className="mb-3">
@@ -277,7 +277,7 @@ const Category = () => {
                                             <input id={"category"} name={"category"} defaultValue={objectItem?.description} onInput={handleInputCategory}  type="text" className="form-control" placeholder={"Category"}/>
                                         </div>
 
-                                        <div className={"d-flex justify-content-center mt-3"}>
+                                        <div className={"d-flex justify-content-center mt-4"}>
                                             <button id={"button-submit-edit"} type="submit" className="btn btn-primary me-2">Submit</button>
                                         </div>
                                     </form>
@@ -289,7 +289,7 @@ const Category = () => {
                         </div>
 
 
-                        <div className={"table-container1 d-flex justify-content-center me-5 pe-5"}>
+                        <div className={"table-container1 d-flex justify-content-center"} style={{width:"95%"}}>
 
 
 

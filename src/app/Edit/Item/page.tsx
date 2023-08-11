@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import Aside_Menubar from "@/components/Aside_Menubar";
 import { Table, Button, Dropdown } from '@nextui-org/react';
-import "./Id.css";
+import "./item.css";
 
 
 const Item = () => {
@@ -258,8 +258,8 @@ const Item = () => {
                   <div className={"form-container1"}>
 
 
-                      <div className={"form-container "}>
-                          <div className={"d-flex align-items-center justify-content-center mt-3"}>
+                      <div className={"form-container d-flex align-items-center justify-content-center mt-3"}>
+                          <div className={""}>
 
                               <form onSubmit={handleSubmit} className={"shadow-lg rounded px-3 py-3 border form-container-edit   "} id={"formContainer"} style={{width: "300px"}}>
                                   <div className="mb-3">
@@ -296,9 +296,9 @@ const Item = () => {
                   </div>
 
 
-                    <div className={"table-container1 d-flex justify-content-center me-5 pe-5"}>
+                    <div className={"table-container1 d-flex justify-content-center"} style={{width:"95%"}}>
 
-                        <div className={"table-container border  rounded mt-4"}>
+                        <div className={"table-container border rounded mt-2"}>
 
                             <Table
                                 className={"table-items"}
