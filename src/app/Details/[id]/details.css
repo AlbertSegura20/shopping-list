@@ -1,0 +1,81 @@
+.table-container-1{
+    width: 40% !important;
+}
+
+.table-container-2{
+    width: 40% !important;
+}
+
+.container-fluid{
+    width: 90% !important;
+}
+
+.thead-1 th {
+    background-color: #006DCC !important;
+    color: white;
+}
+
+.thead-1 th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.thead-1 th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+
+.thead-2 th {
+    background-color: #800080   !important;
+    color: white;
+}
+
+.thead-2 th:first-child {
+    border-radius: 10px 0 0 0;
+}
+.thead-2 th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+table {
+
+    box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
+
+}
+
+.container-fluid{
+    /*background-color: #F2F2F2;*/
+}
+
+.table-1 {
+    width: 100%;
+    margin-bottom: 1rem;
+    vertical-align: top;
+    border-color: var(--bs-table-border-color);
+}
+.table-1 > :not(caption) > * > * {
+    padding: 0.5rem 0.5rem;
+    color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
+    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
+}
+.table-1 > tbody {
+    vertical-align: inherit;
+}
+.table-1 > thead {
+    vertical-align: bottom;
+}
+
+.table-1 tbody tr:not(:focus)>td>.numbers{
+    display: none;
+}
+.table-1 tbody tr:focus>td>input{
+    display: none;
+}
+.inputAmount{
+    width: 100px;
+
+}
+
+.greater{
+    transform: rotate(180deg);
+}

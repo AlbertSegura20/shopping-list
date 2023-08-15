@@ -1,5 +1,6 @@
 .cards-container{
-    min-height: 300px;
+    min-height: 200px;
+    width: calc(100vw - 220px);
 }
 
 .zoom {
@@ -15,34 +16,34 @@
     position: relative;
 }
 
-.plusIcon{
-    position: absolute;
-    z-index: 100;
-}
+/*.plusIcon{*/
+/*    position: absolute;*/
+/*    z-index: 100;*/
+/*}*/
 
 
-.float{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
-    border-radius:50px;
-    /*text-align:center;*/
-    box-shadow: 2px 3px 2px #999;
-    transition: 1s;
+/*.float{*/
+/*    position:fixed;*/
+/*    width:60px;*/
+/*    height:60px;*/
+/*    bottom:40px;*/
+/*    right:40px;*/
+/*    border-radius:50px;*/
+/*    !*text-align:center;*!*/
+/*    box-shadow: 2px 3px 2px #999;*/
+/*    transition: 1s;*/
 
 
-}
+/*}*/
 
-.float:hover{
-    /*transform: rotate(35deg);*/
-    /*transition: 1s;*/
-    /*filter: invert(50%);*/
-    filter: grayscale(100%) brightness(80%) sepia(300%) hue-rotate(50deg) saturate(500%);
+/*.float:hover{*/
+/*    !*transform: rotate(35deg);*!*/
+/*    !*transition: 1s;*!*/
+/*    !*filter: invert(50%);*!*/
+/*    filter: grayscale(100%) brightness(80%) sepia(300%) hue-rotate(50deg) saturate(500%);*/
 
-}
+/*}*/
 
-.my-float{
-    margin-top:22px;
-}
+/*.my-float{*/
+/*    margin-top:22px;*/
+/*}*/
