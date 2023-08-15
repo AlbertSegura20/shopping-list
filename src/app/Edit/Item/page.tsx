@@ -12,7 +12,6 @@ const Item = () => {
 
     const credentialsUser = "lsegura:12345";
     const credentialsBase64User = btoa(credentialsUser);
-    // const [visible, setVisible] = React.useState(false);
     const Router = useRouter();
     const userName = sessionStorage.getItem('userName');
     const [token, setToken] = useState<any>();
@@ -20,8 +19,6 @@ const Item = () => {
     const [categories, setCategories] = useState<any>([]);
     const [items, setItems] = useState<any>([]);
     const [objectItem, setObjectItem] = useState<any>({});
-    // const [itemName, setItemName] = useState<string>();
-    // const [itemPrice, setItemPrice] = useState<any>();
     const [itemCategory, setItemCategory] = useState<number>();
     const [idCategory, setIdCategory] = useState<number>();
     const [selectedCategory, setSelectedCategory] = useState<string>();

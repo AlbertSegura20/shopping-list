@@ -7,8 +7,9 @@ import React, {useEffect, useState} from "react";
 import "../../../components/Aside_Menubar.css";
 import "./details.css";
 import {useRouter} from "next/navigation";
-import Menor from "../../../../menor-que (1).png";
-import Mayor from "../../../../menor-que.png";
+// import Menor from "../../../../menor-que (1).png";
+import Greater from "../../../../menor-que.png";
+import Less from "../../../../menor-que.png";
 const Details = ({params}:{params:any}) => {
 
     const [token, setToken] = useState<any>();
@@ -210,7 +211,7 @@ const Details = ({params}:{params:any}) => {
 
                     </div>
 
-                    <div className={"container-fluid justify-content-evenly border border-black d-flex ms-1"}>
+                    <div className={"container-fluid justify-content-evenly  d-flex ms-1"}>
 
 
                       <div className={"table-container-1"}>
@@ -223,19 +224,33 @@ const Details = ({params}:{params:any}) => {
                                   <th scope="col" className={"text-white"}>Amount</th>
                                   <th scope="col" className={"text-white text-center"}>Category</th>
                                   <th scope="col" className={"text-white"}></th>
+
                               </tr>
                               </thead>
                               <tbody>
                               {items.map((data:any, index:number) => (
-                                  <tr key={index}>
+                                  <tr key={index} tabIndex={0}>
                                       <td>{data.name}</td>
                                       <td>{data.price}</td>
-                                      <td>{<input/>}</td>
+
+                                      <td>
+                                          {/*<input className={"inputAmount form-floating"}/>*/}
+
+                                              <input className="form-control inputAmount" id="floatingInput" placeholder="Amount"/>
+                                          <span className={"numbers "}>10</span></td>
                                       <td className={"text-center"}>{data.idCategory}</td>
                                       <td onClick={() => AddItemList(data)}>
-                                          <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" className={"lessThan"}>
-                                              <path d="M3.4 81.7c-7.9 15.8-1.5 35 14.3 42.9L280.5 256 17.7 387.4C1.9 395.3-4.5 414.5 3.4 430.3s27.1 22.2 42.9 14.3l320-160c10.8-5.4 17.7-16.5 17.7-28.6s-6.8-23.2-17.7-28.6l-320-160c-15.8-7.9-35-1.5-42.9 14.3z"/>
-                                          </svg>
+                                          {/*<svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" className={"lessThan"}>*/}
+                                          {/*    <path d="M3.4 81.7c-7.9 15.8-1.5 35 14.3 42.9L280.5 256 17.7 387.4C1.9 395.3-4.5 414.5 3.4 430.3s27.1 22.2 42.9 14.3l320-160c10.8-5.4 17.7-16.5 17.7-28.6s-6.8-23.2-17.7-28.6l-320-160c-15.8-7.9-35-1.5-42.9 14.3z"/>*/}
+                                          {/*</svg>*/}
+
+                                          <Image className={"greater"}
+                                                 id={"greater"}
+                                                 src={Greater}
+                                                 width={32}
+                                                 height={32}
+                                                 alt="greaterThan"
+                                          />
                                       </td>
                                   </tr>
                               ))}
@@ -274,9 +289,16 @@ const Details = ({params}:{params:any}) => {
                                 {addedDetail.map((data:any, index:number) => (
                                     <tr key={index}>
                                         <td onClick={() => deleteDetail(data.idDetail)}>
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" className={"lessThan"}>
-                                                <path d="M3.4 81.7c-7.9 15.8-1.5 35 14.3 42.9L280.5 256 17.7 387.4C1.9 395.3-4.5 414.5 3.4 430.3s27.1 22.2 42.9 14.3l320-160c10.8-5.4 17.7-16.5 17.7-28.6s-6.8-23.2-17.7-28.6l-320-160c-15.8-7.9-35-1.5-42.9 14.3z"/>
-                                            </svg>
+                                            {/*<svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" className={"lessThan"}>*/}
+                                            {/*    <path d="M3.4 81.7c-7.9 15.8-1.5 35 14.3 42.9L280.5 256 17.7 387.4C1.9 395.3-4.5 414.5 3.4 430.3s27.1 22.2 42.9 14.3l320-160c10.8-5.4 17.7-16.5 17.7-28.6s-6.8-23.2-17.7-28.6l-320-160c-15.8-7.9-35-1.5-42.9 14.3z"/>*/}
+                                            {/*</svg>*/}
+                                            <Image className={"less"}
+                                                   id={"less"}
+                                                   src={Less}
+                                                   width={32}
+                                                   height={32}
+                                                   alt="lessThan"
+                                            />
                                         </td>
                                         <td>{data.itemName}</td>
                                         <td>{data.total}</td>
@@ -289,10 +311,6 @@ const Details = ({params}:{params:any}) => {
                             </table>
 
                         </div>
-
-
-
-
 
                     </div>
 
