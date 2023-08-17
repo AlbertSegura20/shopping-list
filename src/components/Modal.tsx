@@ -191,17 +191,43 @@ export default function CardModal({visible, closeHandler, itemProperties, button
                     </Text>
                 </Modal.Header>
                 <Modal.Body>
-                    <Input
-                        name={"item"}
-                        initialValue={itemProperties?.name}
-                        clearable
-                        bordered
-                        fullWidth
-                        color="primary"
-                        size="lg"
-                        placeholder="Card Title"
-                        onInput={handleInput}
-                    />
+                    {buttonName === "update" ?
+
+                        <Input
+                            name={"item"}
+                            initialValue={itemProperties?.name}
+                            clearable
+                            bordered
+                            fullWidth
+                            color="primary"
+                            size="lg"
+                            placeholder="Card Title"
+                            onInput={handleInput}
+                        />
+                        :
+                        <Input
+                            name={"item"}
+                            clearable
+                            bordered
+                            fullWidth
+                            color="primary"
+                            size="lg"
+                            placeholder="Card Title"
+                            onInput={handleInput}
+                        />
+                    }
+
+                    {/*<Input*/}
+                    {/*    name={"item"}*/}
+                    {/*    initialValue={itemProperties?.name}*/}
+                    {/*    clearable*/}
+                    {/*    bordered*/}
+                    {/*    fullWidth*/}
+                    {/*    color="primary"*/}
+                    {/*    size="lg"*/}
+                    {/*    placeholder="Card Title"*/}
+                    {/*    onInput={handleInput}*/}
+                    {/*/>*/}
 
                     {/*<Textarea bordered color={"success"} placeholder={"Card Text"} />*/}
 

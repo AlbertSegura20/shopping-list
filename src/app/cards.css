@@ -1,14 +1,21 @@
 .cards-container{
     min-height: 200px;
     width: calc(100vw - 220px);
+
+
 }
 
 .zoom {
     transition: transform .8s ease;
 }
 
+.trash-button{
+    color: #720e9e !important;
+}
+
+
 .zoom:hover {
-    transform: scale(1.1);
+    /*transform: scale(1.1);*/
 }
 
 
