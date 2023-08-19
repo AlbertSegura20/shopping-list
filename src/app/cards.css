@@ -1,8 +1,11 @@
 .cards-container{
     min-height: 200px;
     width: calc(100vw - 220px);
+    min-width: 245px;
+}
 
-
+.container-fluid{
+    width: 90% !important;
 }
 
 .zoom {
@@ -18,6 +21,9 @@
     /*transform: scale(1.1);*/
 }
 
+.dropdown-item:focus{
+    background-color: transparent !important;
+}
 
 .main {
     position: relative;

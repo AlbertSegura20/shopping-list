@@ -148,10 +148,11 @@ const Home = () => {
     }*/
 
     const handleDetails = (data:any) => {
-        // console.log(data);
-        // Router.push(`/Details/${id}`);
-        // Router.push(`/Details/${data.name}/${data.id}`);
         Router.push(`/Details/${data.name}/${data.id}`);
+    }
+
+    const handleBuy = (data:any) => {
+        Router.push(`/Buy/${data.name}/${data.id}`);
     }
 
 
@@ -239,8 +240,10 @@ const Home = () => {
                                                 <ul className="dropdown-menu">
                                                     <li><button id={"update"} className="dropdown-item text-primary" onClick={() => editHandler(items)}>Edit Title</button></li>
                                                     <li><button className="dropdown-item text-danger" onClick={() => deleteList(items.id)}>Delete</button></li>
-                                                    <li><button className="dropdown-item text-success">Buy</button></li>
+                                                    <li><button className="dropdown-item text-success"  onClick={() => handleBuy(items)}>Buy</button></li>
                                                     <li><button className="dropdown-item trash-button">Something else here</button></li>
+
+
                                                 </ul>
                                             </div>
                                         </div>

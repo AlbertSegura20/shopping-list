@@ -1,13 +1,3 @@
-/*.table-container-1{*/
-/*    width: 40% !important;*/
-/*}*/
-
-
-/*.table-container-2{*/
-/*    width: 40% !important;*/
-/*}*/
-
-
 html {
     height: 100%;
     font-family: sans-serif;
@@ -23,23 +13,6 @@ body {
     transition: 1s;
 }
 
-.container-fluid{
-    width: 90% !important;
-}
-
-.thead-1 th {
-    background-color: #006DCC !important;
-    color: white;
-}
-
-.thead-1 th:first-child {
-    border-radius: 10px 0 0 0;
-}
-.thead-1 th:last-child {
-    border-radius: 0 10px 0 0;
-}
-
-
 .thead-2 th {
     background-color: #800080   !important;
     color: white;
@@ -52,34 +25,16 @@ body {
     border-radius: 0 10px 0 0;
 }
 
+.table-2{
+    width: 700px !important;
+}
+
 table {
 
     box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
     -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
     -moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.41);
 
-}
-
-.container-fluid{
-    /*background-color: #F2F2F2;*/
-}
-
-.table-1 {
-    width: 100%;
-    margin-bottom: 1rem;
-    vertical-align: top;
-    border-color: var(--bs-table-border-color);
-}
-.table-1 > :not(caption) > * > * {
-    padding: 0.5rem 0.5rem;
-    color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
-    box-shadow: inset 0 0 0 9999px var(--bs-table-bg-state, var(--bs-table-bg-type, var(--bs-table-accent-bg)));
-}
-.table-1 > tbody {
-    vertical-align: inherit;
-}
-.table-1 > thead {
-    vertical-align: bottom;
 }
 
 
@@ -102,11 +57,8 @@ table {
 }
 
 
-
-
 .inputAmount{
     width: 120px;
-
 }
 
 
@@ -115,14 +67,12 @@ table {
     margin-bottom: 20px;
 }
 
-.container-fluid{
-    min-width: 400px;
+.table-container-buy{
+    width: 90%;
+    min-width: 440px;
 }
 
 
-.greater{
-    transform: rotate(180deg);
-}
 
 @media screen and (min-width: 1161px) {
     .ItemsAdded1{
@@ -139,7 +89,7 @@ table {
 @media screen and (max-width: 1160px) {
 
     .ItemsAdded{
-      display: none;
+        display: none;
     }
 
     .QueueItems{
@@ -154,10 +104,6 @@ table {
         width: 120px;
     }
 
-    .table-1{
-        width: 700px !important;
-    }
-
     .table-2{
         width: 700px !important;
     }
@@ -166,21 +112,14 @@ table {
 
 @media screen and (max-width: 960px) {
 
-    .table-1{
-        width: 400px !important;
-    }
-
     .table-2{
-        width: 400px !important;
+        width: 500px !important;
     }
 
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 770px) {
 
-    .table-1{
-        width: 300px !important;
-    }
 
     .table-2{
         width: 420px !important;
@@ -194,8 +133,4 @@ table {
 
 
 
-
-@media screen and (max-width: 580px) {
-
-}
 

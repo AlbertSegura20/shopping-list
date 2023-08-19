@@ -294,7 +294,15 @@ body {
 /*}*/
 
 
-@media only screen and (min-width: 651px) {
+/*@media only screen and (min-width: 751px) {*/
+/*    .sidebar {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+
+
+@media only screen and (min-width: 751px) {
     .sidebar {
         width: 100%;
     }
@@ -453,12 +461,6 @@ body {
         display: none;
     }
 
-
-    .top-right{
-        display: flex;
-        justify-content: center;
-        width: 90% !important;
-    }
 
     #navbar {
         /*padding-bottom: 10px;*/

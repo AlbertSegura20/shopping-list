@@ -5,11 +5,12 @@ import plusImage from "../../../../plus.png";
 import CardModal from "@/components/Modal";
 import React, {useEffect, useState} from "react";
 import "../../../components/Aside_Menubar.css";
-import "./details.css";
+import "./details.css"
 import {useRouter} from "next/navigation";
 // import Menor from "../../../../menor-que (1).png";
 import Greater from "../../../../menor-que.png";
 import Less from "../../../../menor-que.png";
+
 const Details = ({params}:{params:any}) => {
 
     const [token, setToken] = useState<any>();
@@ -218,12 +219,14 @@ const Details = ({params}:{params:any}) => {
 
                     <div className={"d-flex justify-content-center mb-3 mt-5"} style={{width:"95%"}}>
 
-                        <h2>Note Title: {params.Info[0].replace(/%20/g, " ")}</h2>
+                     <div className={"details-title"}>
+                         Note Title: {params.Info[0].replace(/%20/g, " ")}
+                     </div>
 
                     </div>
 
 
-                    <div className={"container-fluid justify-content-evenly  d-flex ms-1"}>
+                    <div className={"container-fluid  justify-content-evenly  d-flex ms-1"}>
 
 
                         <div className={"container-fluid d-flex flex-column align-items-center"}>
