@@ -188,7 +188,7 @@ body {
 /*************************************************************************/
 /*DARK MODE*/
 
-
+/*
 .dark-mode {
     transition: 1s;
     background-color: black;
@@ -283,21 +283,28 @@ body {
     transition: 1s;
 }
 
-}
+}*/
 
 
 
-@media only screen and (min-width: 651px) {
-    .sidebar-mobile-container {
-        display: none;
-    }
-}
+/*@media only screen and (min-width: 651px) {*/
+/*    .sidebar-mobile-container {*/
+/*        display: none;*/
+/*    }*/
+/*}*/
 
 
-@media only screen and (min-width: 651px) {
+/*@media only screen and (min-width: 751px) {*/
+/*    .sidebar {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
+
+
+@media only screen and (min-width: 751px) {
     .sidebar {
         width: 100%;
-        margin-left: 2px;
     }
 }
 
@@ -312,6 +319,7 @@ body {
     }
 }
 
+/*
 @media only screen and (max-width: 650px) {
     .sidebar-container {
         display: none;
@@ -320,6 +328,72 @@ body {
     .sidebar-mobile{
         height: 100vh;
         margin-left: 10px;
+    }
+
+
+
+    .form-container{
+        display: inline-flex;
+        width: 80% !important
+    ;
+        !*background-color: chartreuse;*!
+    }
+
+
+    .left-column{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        width: 120px
+    }
+
+    .right-column{
+        height: 100%;
+        flex-direction: column;
+
+    }
+
+
+    #navbar {
+        !*padding-bottom: 10px;*!
+        display: inline-flex;
+        width: 80%;
+        !*padding-top: 18px !important;*!
+    }
+
+    .top-left {
+        width: 100%;
+    }
+
+    .aside-menu-bottom {
+        width: 80px;
+    }
+
+    .sidebar-mobile {
+        width: 80px;
+    }
+
+    .items {
+        display: none;
+    }
+
+    .table-container{
+        width: 100% !important;
+    }
+}
+*/
+
+
+
+
+@media only screen and (max-width: 750px) {
+    .sidebar-container {
+        display: none;
+    }
+
+    .sidebar-mobile{
+        height: 100vh;
+        margin-left: 0 !important;
     }
 
 
@@ -374,18 +448,19 @@ body {
     }
 }
 
+
+
+
+
+
+
+
 @media screen and (max-width: 479px) {
 
     .button-search{
         display: none;
     }
 
-
-    .top-right{
-        display: flex;
-        justify-content: center;
-        width: 90% !important;
-    }
 
     #navbar {
         /*padding-bottom: 10px;*/

@@ -141,8 +141,18 @@ const Home = () => {
 
     };
 
-    const handleDetails = (id:number) => {
+ /*   const handleDetails = (id:any) => {
+        // console.log(data);
         Router.push(`/Details/${id}`);
+        // Router.push(`/Details/${data.name}/${data.id}`);
+    }*/
+
+    const handleDetails = (data:any) => {
+        Router.push(`/Details/${data.name}/${data.id}`);
+    }
+
+    const handleBuy = (data:any) => {
+        Router.push(`/Buy/${data.name}/${data.id}`);
     }
 
 
@@ -201,19 +211,41 @@ const Home = () => {
                         <div className={"cards-container main d-flex flex-wrap justify-content-center align-items-center"}>
 
                             {text.map((items:any, index:number) => (
-                                <div className={"rounded ms-4 mt-4 shadow-lg mb-4 bg-transparent zoom "}  key={items.id} onClick={() => handleDetails(items.id)}>
+                                // <div className={"rounded ms-4 mt-4 shadow-lg mb-4 bg-transparent zoom "}  key={items.id} onClick={() => handleDetails(items.id)}>
+                                 <div className={"rounded ms-4 mt-4 shadow-lg mb-4 bg-transparent zoom "}  key={items.id} style={{minWidth:"200px"}}>
 
                                     <div className="card">
                                         <div className="card-header">
                                             <h5><b className={""}>{items.name}</b></h5>
                                         </div>
-                                        <div className="card-body">
+                                        <div className="card-body" onClick={() => handleDetails(items)}>
                                             <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.total}</p>
                                             <p className="card-text" style={{fontFamily:"monospace"}}><b>Age:</b> {items.totalItems}</p>
                                         </div>
-                                        <div className={"card-footer mt-1"}>
-                                            <button id={"update"} className={"btn btn-primary"} onClick={() => editHandler(items)}>Edit Title</button>
-                                            <button  className={"btn btn-danger ms-3"} onClick={() => deleteList(items.id)}>Delete</button>
+                                        <div className={"card-footer mt-1 d-flex justify-content-end"}>
+                                            {/*<button id={"update"} className={"btn btn-primary"} onClick={() => editHandler(items)}>Edit Title</button>*/}
+                                            {/*<button  className={"btn btn-danger ms-3"} onClick={() => deleteList(items.id)}>Delete</button>*/}
+
+                                            <div className="dropdown">
+                                                <div className="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                         fill="currentColor" className="bi bi-three-dots-vertical"
+                                                         viewBox="0 0 16 16">
+                                                        <path
+                                                            d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                    </svg>
+
+                                                </div>
+
+                                                <ul className="dropdown-menu">
+                                                    <li><button id={"update"} className="dropdown-item text-primary" onClick={() => editHandler(items)}>Edit Title</button></li>
+                                                    <li><button className="dropdown-item text-danger" onClick={() => deleteList(items.id)}>Delete</button></li>
+                                                    <li><button className="dropdown-item text-success"  onClick={() => handleBuy(items)}>Buy</button></li>
+                                                    <li><button className="dropdown-item trash-button">Something else here</button></li>
+
+
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

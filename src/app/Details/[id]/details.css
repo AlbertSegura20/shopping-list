@@ -65,14 +65,14 @@ table {
     vertical-align: bottom;
 }
 
-.table-1 tbody tr:not(:focus)>td>.numbers{
-    display: none;
-}
-.table-1 tbody tr:focus>td>input{
-    display: none;
-}
+/*.table-1 tbody tr:not(:focus)>td>.numbers{*/
+/*    display: none;*/
+/*}*/
+/*.table-1 tbody tr:focus>td>input{*/
+/*    display: none;*/
+/*}*/
 .inputAmount{
-    width: 100px;
+    width: 90px;
 
 }
 
